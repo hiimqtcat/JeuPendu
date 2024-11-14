@@ -1,0 +1,44 @@
+/* Mouaad Chentaf - Malak Jarras */
+
+fieldset {
+    border-color: #605ca8;
+    padding: 2px;
+    width: 676px;
+    border-radius: 10px;
+}
+
+p{
+    width: 668px;
+    font-family: "Comic Sans MS";
+    font-size: 18px;
+    color: #605ca8;
+    word-wrap: anywhere;
+    padding: 4px;
+}
+
+table{
+    width: 675px;
+    border: 0px;
+}
+#dessin{
+    width: 400px;
+    height: 433px;
+}
+#phylactere{
+    width: 275px;
+    height: 192px;
+}
+#personnage{
+    width: 275px;
+    height: 241px;
+}
+#mot_cache{
+    width: 500px;
+    position: absolute;
+    left: 15px;
+    top:400px;
+    text-align: center;
+}
+#hiddenLetter0{
+    margin-right: 10px;
+}
