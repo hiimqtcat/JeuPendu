@@ -87,10 +87,9 @@ function construitAlphabet() {
     }
 }
 
-function main() {
+$(() => {
     construitTableau();
     construitMotCache();
     construitAlphabet();
-}
+});
 
-$(document).ready(main())
