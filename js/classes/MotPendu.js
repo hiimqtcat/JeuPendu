@@ -34,21 +34,27 @@ class MotPendu {
     //Un objet de cette classe permet de savoir si une lettre est présente dans le mot et à quelles positions. 
     //Une lettre peut-être à plusieurs endroits à la fois dans le mot
 
-    lettreEstPresente(lettre){
+    lettreEstPresente(lettre) {
         let tabIndicesLettre = [];
         for (let index = 0; index < this.motPendu.length; index++) {
-            if (lettre === this.motPendu[index]){
+            if (lettre === this.motPendu[index]) {
                 tabIndicesLettre.push(index);
                 this.avancementMot.add(index);
-            }else {
-                this.lettreInvalide(lettre);
             }
+        }
+        if (tabIndicesLettre.length === 0) {
+            this.lettreInvalide(lettre);
         }
         return tabIndicesLettre;
     }
 
+
     //Un objet de cette classe permet de savoir si le mot est complété  (si toutes les lettres ont 
     // été trouvées pour ce mot)
+
+    // motCompleter() {
+    //     return this.motPendu.length === this.avancementMot.size;
+    // }
 
     motCompleter(){
     let estCompleter = false;

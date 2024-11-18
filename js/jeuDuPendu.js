@@ -2,7 +2,7 @@
 
 "use strict"
 
-    let monDiv = $("<div>");
+    let monDiv = $("<div>").prop('id','monDiv')
 function construitTableau() {
     let monTable = $("<table>").prop({"cellSpacing": "0", "cellPadding": "0"});
     let monTbody = $("<tbody>");
@@ -69,10 +69,10 @@ monDiv.append(monDiv2);
     }
     let motRandom = Math.floor(Math.random() * tableauMot.length);
     for (let i = 0; i < tableauMot[motRandom].getMot().length ; i++) {
-        let monSpan = $("<span>").prop({"style":"margin-right:10px" , "id" : "hiddenLetter0" });
+        let monSpan = $("<span>").prop({"style":"margin-right:10px" , "id" : "hiddenLetter" + i });
         monDiv2.append(monSpan);
         monSpan.prop("id","hiddenLetter0");
-        let imgUnderscore = $("<img>").prop({"src":"images/lettres_mot/underscore.gif","id":"lettre_0","alt":"_"});
+        let imgUnderscore = $("<img>").prop({"src":"images/lettres_mot/underscore.gif","id":"lettre_"+i,"alt":"_"});
         monSpan.append(imgUnderscore);
     }
 }
@@ -81,16 +81,61 @@ function construitAlphabet() {
     let monDiv3 = $("<div>").prop("id","alphabet");
     monDiv.append(monDiv3);
     const tableauAlphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-    for (let i = 0; i < tableauAlphabet.length; i++) {
+    const alphabetDiv = $("#alphabet");
+    alphabetDiv.empty();
 
-
+    for (let i = 97; i <= 122; i++) {
+        const lettre = String.fromCharCode(i);
+        const bouton = $("<span>")
+            .css("margin-right", "10px")
+            .append(
+                $("<a>")
+                    .attr("href", "#")
+                    .addClass("lettre")
+                    .data("lettre", lettre) // Stocke la lettre dans le bouton
+                    .append(
+                        $("<img>")
+                            .attr({
+                                src: `images/lettres/${lettre}.gif`,
+                                alt: `Lettre ${lettre.toUpperCase()}`,
+                                width: 18,
+                                height: 35
+                            })
+                    )
+            );
+        alphabetDiv.append(bouton);
     }
 }
+function alternerImagePersonnage() {
+    let imgPersonnage = $("#personnage");
+
+    const imgOuvert = "images/personnage_1.jpg";
+    const imgFerme = "images/personnage_2.jpg";
+
+    const tempsOuvert = 6000;
+    const tempsFerme = 200;
+
+    function clignoter() {
+        imgPersonnage.prop("src", imgFerme);
+
+        setTimeout(() => {
+            imgPersonnage.prop("src", imgOuvert);
+        }, tempsFerme);
+    }
+
+    setInterval(clignoter, tempsOuvert);
+}
+
+
+
 
 function main() {
     construitTableau();
     construitMotCache();
     construitAlphabet();
+    alternerImagePersonnage();
 }
 
-$(document).ready(main())
+$(() => {
+    main();
+});

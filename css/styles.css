@@ -36,9 +36,21 @@ table{
     width: 500px;
     position: absolute;
     left: 15px;
-    top:400px;
+    top:390px;
     text-align: center;
 }
 #hiddenLetter0{
     margin-right: 10px;
+}
+#alphabet{
+    border-style: dashed;
+    width: 400px;
+    position: absolute;
+    text-align: center;
+    top : 85%;
+    left: 10%;
+}
+#monDiv{
+    border-style: dashed;
+    position: relative;
 }
