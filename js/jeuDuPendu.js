@@ -52,9 +52,6 @@ function construitTableau() {
     return monDiv;
 }
 
-
-
-
 function construitMotCache() {
 
 let monDiv2 = $("<div>").prop("id","mot_cache");
@@ -78,9 +75,9 @@ monDiv.append(monDiv2);
 }
 
 function construitAlphabet() {
-    let monDiv3 = $("<div>").prop("id","alphabet");
+    let monDiv3 = $("<div>").prop("id", "alphabet");
     monDiv.append(monDiv3);
-    const tableauAlphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+    const tableauAlphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
     const alphabetDiv = $("#alphabet");
     alphabetDiv.empty();
 
@@ -106,6 +103,7 @@ function construitAlphabet() {
         alphabetDiv.append(bouton);
     }
 }
+
 function alternerImagePersonnage() {
     let imgPersonnage = $("#personnage");
 
@@ -124,18 +122,15 @@ function alternerImagePersonnage() {
     }
 
     setInterval(clignoter, tempsOuvert);
+
+
+
+
 }
-
-
-
-
-function main() {
+$(() => {
     construitTableau();
     construitMotCache();
     construitAlphabet();
     alternerImagePersonnage();
-}
-
-$(() => {
-    main();
 });
+
