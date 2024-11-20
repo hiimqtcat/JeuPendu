@@ -7,12 +7,12 @@ class JoueurPendu {
      * @param {string} nom - Le nom du joueur.
      */
     constructor(nom) {
-        this.nom = nom;           // Nom du joueur
-        this.motsEssaye = 0;      // Nombre de mots tentés
-        this.motsReussis = 0;     // Nombre de mots réussis
-        this.points = 0;          // Score total du joueur
-        this.tempsCumule = 0;     // Temps total cumulé en secondes
-        this.debutMot = null;     // Temps de début pour deviner un mot
+        this.nom = nom;
+        this.motsEssaye = 0;
+        this.motsReussis = 0;
+        this.points = 0;
+        this.tempsCumule = 0;
+        this.debutMot = null;
     }
 
     /**
@@ -28,10 +28,10 @@ class JoueurPendu {
     finTemps() {
         if (this.debutMot) {
             const finMot = new Date();
-            const duree = (finMot - this.debutMot) / 1000; // Durée en secondes
+            const duree = (finMot - this.debutMot) / 1000;
             this.tempsCumule += duree;
             console.log(`Durée pour ce mot : ${duree} secondes.`);
-            this.debutMot = null; // Réinitialise le début après la fin
+            this.debutMot = null;
         }
     }
 
@@ -48,7 +48,7 @@ class JoueurPendu {
      */
     motReussi(erreurs) {
         this.motsReussis++;
-        const pointsPourCeMot = Math.max(0, 9 - erreurs); // Calcul des points (max 9)
+        const pointsPourCeMot = Math.max(0, 9 - erreurs);
         this.points += pointsPourCeMot;
     }
 

@@ -6,19 +6,19 @@
 // et ce format. C'est très important pour la correction de votre TP
 
 let motsSources = {
-    "mot_1" : "éclair",
-    "mot_2" : "papillon",
-    "mot_3" : "cascade",
-    "mot_4" : "brouillard",
-    "mot_5" : "fourmi",
-    "mot_6" : "labyrinthe",
-    "mot_7" : "galaxie",
-    "mot_8" : "soleil",
-    "mot_9" : "biscuit",
-    "mot_10" : "orage",
-    "mot_11" : "lune",
-    "mot_12" : "savane",
-    "mot_13" : "colibri",
-    "mot_14" : "citron",
-    "mot_15" : "lutin"
+    "mot_1" : "nuage",
+    "mot_2" : "tornade",
+    "mot_3" : "volcan",
+    "mot_4" : "escalier",
+    "mot_5" : "baleine",
+    "mot_6" : "foret",
+    "mot_7" : "requin",
+    "mot_8" : "champignon",
+    "mot_9" : "sable",
+    "mot_10" : "clavier",
+    "mot_11" : "aventure",
+    "mot_12" : "magicien",
+    "mot_13" : "planète",
+    "mot_14" : "météore",
+    "mot_15" : "sorcière"
 }

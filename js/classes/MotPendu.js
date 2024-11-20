@@ -3,7 +3,6 @@
 
 class MotPendu {
     constructor() {
-        // Initialise un mot aléatoire et des ensembles pour suivre l'avancement et les lettres invalides
         this.motPendu = this.shuffleLeMot(motsSources);
         this.avancementMot = new Set();
         this.lettreInvalides = new Set();

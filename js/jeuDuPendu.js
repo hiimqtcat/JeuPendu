@@ -2,9 +2,9 @@
 "use strict";
 
 let monDiv = $("<div>").prop('id', 'monDiv');
-let motCourant = null; // Contient un objet MotPendu représentant le mot à deviner
-let joueur = new JoueurPendu("Jean"); // Crée un joueur avec un nom, par exemple "Jean"
-let maximumErreurs = 9; // Limite d'erreurs avant défaite
+let motCourant = null;
+let joueur = new JoueurPendu("Will");
+let maximumErreurs = 9;
 
 /**
  * Initialise le jeu.
@@ -136,15 +136,24 @@ function construitAlphabet() {
  */
 function traiterLettreChoisie(lettre, bouton) {
     let positionsLettre = motCourant.lettreEstPresente(lettre);
+    const tempAffichage = 3000;
+    let imgSuper = 'images/phylactere_super.jpg'
+    let imgZut = 'images/phylactere_zut.jpg'
+    let imgRien = 'images/phylactere_rien.jpg'
 
     if (positionsLettre.length > 0) {
+        $("#phylactere").attr("src", imgSuper);
         positionsLettre.forEach(pos => {
             $(`#hiddenLetter${pos}`).find("img").attr("src", `images/lettres_mot/${lettre}.gif`);
         });
     } else {
+        $("#phylactere").attr("src", imgZut);
         let erreurs = motCourant.getNombreDeLettresInvalides();
         $("#dessin").attr("src", `images/bonhomme_pendu_${erreurs}.jpg`);
     }
+    setTimeout(() => {
+        $("#phylactere").attr("src", imgRien);
+    }, tempAffichage);
 
     bouton.off("click").addClass("disabled").attr('disabled', true);
     verifierFinDePartie();
